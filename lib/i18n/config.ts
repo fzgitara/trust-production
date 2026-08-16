@@ -3,7 +3,7 @@ export const locales = ["id", "en"] as const;
 export type Locale = (typeof locales)[number];
 
 /** Default locale — Bahasa Indonesia. */
-export const defaultLocale: Locale = "id";
+export const defaultLocale: Locale = "en";
 
 /** Human-readable native names, used in the locale switcher. */
 export const localeNames: Record<Locale, string> = {

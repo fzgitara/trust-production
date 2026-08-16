@@ -21,8 +21,8 @@ export default function Header({ locale, dictionary }: Props) {
     { href: `/${locale}`, label: dictionary.nav.home },
     { href: `/${locale}#services`, label: dictionary.nav.services },
     { href: `/${locale}#events`, label: dictionary.nav.events },
-    { href: `/${locale}#equipment`, label: dictionary.nav.equipment },
-    { href: `/${locale}#gallery`, label: dictionary.nav.gallery },
+    // { href: `/${locale}#equipment`, label: dictionary.nav.equipment },
+    // { href: `/${locale}#gallery`, label: dictionary.nav.gallery },
     { href: `/${locale}#contact`, label: dictionary.nav.contact },
   ];
 

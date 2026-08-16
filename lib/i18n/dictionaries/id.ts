@@ -27,8 +27,8 @@ const id: Dictionary = {
     logoAlt: "logo",
   },
   hero: {
-    eyebrow: "TODO: contoh — Event Production & Rental", // TODO: confirm eyebrow
-    headline: "Produksi yang membuat acara Anda tampak luar biasa.",
+    eyebrow: "Event Production & Rental",
+    headline: "Kami Siap Menjadikan Produksi Acara Anda Menjadi Luar Biasa!",
     subheadline:
       "Organisasi acara end-to-end, sound system, panggung, dan lighting untuk pernikahan, korporat, konser, sekolah, komunitas, dan acara privat.",
     imageAlt: "Panggung produksi dengan rig lighting — teknologi & set-up nyata",
@@ -97,11 +97,11 @@ const id: Dictionary = {
     imageAlt: "Set-up rapi dan crew bekerja di lokasi acara",
     points: [
       { title: "Crew profesional & tepat waktu", text: "Pemasangan terjadwal dan disiplin di lokasi.", confirmed: false }, // TODO: confirm
-      { title: "Kualitas konsisten & peralatan sendiri", text: "Standar peralatan yang sama di setiap acara.", confirmed: false }, // TODO: confirm
+      { title: "Kualitas konsisten &  standar nasional", text: "Standar peralatan yang sama di setiap acara.", confirmed: false }, // TODO: confirm
       { title: "Penawaran responsif", text: "Proses penawaran yang cepat dan komunikatif.", confirmed: false }, // TODO: soften SLA unless confirmed
       { title: "Portofolio nyata lintas jenis acara", text: "Rekam jejak eksekusi di berbagai tipe acara.", confirmed: false }, // TODO: confirm
       { title: "Set-up bersih & aman", text: "Instalasi rapi dengan memperhatikan keselamatan penonton.", confirmed: false }, // TODO: confirm
-      { title: "Peralatan cadangan di lokasi", text: "Jaring pengaman untuk kelancaran acara.", confirmed: false }, // TODO: confirm
+      { title: "Projek yang nyata lintas segala macam jenis acara", text: "Rekam jejak eksekusi di berbagai tipe acara.", confirmed: false }, // TODO: confirm
     ],
   },
   portfolio: {

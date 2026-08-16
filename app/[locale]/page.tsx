@@ -21,6 +21,7 @@ export async function generateMetadata({
   params,
 }: HomeProps): Promise<Metadata> {
   const { locale } = await params;
+  console.log('LOCALE', locale)
   if (!isLocale(locale)) return {};
 
   const dict = await getDictionary(locale);

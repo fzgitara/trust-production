@@ -27,8 +27,8 @@ const en: Dictionary = {
     logoAlt: "logo",
   },
   hero: {
-    eyebrow: "TODO: e.g. — Event Production & Rental", // TODO: confirm eyebrow
-    headline: "Production that makes your event look unforgettable.",
+    eyebrow: "Event Production & Rental",
+    headline: "We Are Ready to Make Your Event Production Extraordinary!",
     subheadline:
       "End-to-end event organization, sound, stage, and lighting for weddings, corporate, concerts, schools, communities, and private events.",
     imageAlt: "Production stage with lighting rig — real equipment & setup",
@@ -97,11 +97,11 @@ const en: Dictionary = {
     imageAlt: "Clean setup and crew working at an event",
     points: [
       { title: "Professional crew & punctual setup", text: "Scheduled, disciplined on-site installation.", confirmed: false }, // TODO: confirm
-      { title: "Consistent quality & own equipment", text: "The same equipment standard at every event.", confirmed: false }, // TODO: confirm
+      { title: "Consistent quality & national standards", text: "The same equipment standard at every event.", confirmed: false }, // TODO: confirm
       { title: "Responsive quoting", text: "Fast, communicative quoting process.", confirmed: false }, // TODO: soften SLA unless confirmed
       { title: "Real portfolio across event types", text: "Track record across different event formats.", confirmed: false }, // TODO: confirm
       { title: "Clean & safe setup", text: "Tidy installation with audience safety in mind.", confirmed: false }, // TODO: confirm
-      { title: "Backup equipment on site", text: "A safety net to keep your event running.", confirmed: false }, // TODO: confirm
+      { title: "Real projects across all event types", text: "Track record across different event formats.", confirmed: false }, // TODO: confirm
     ],
   },
   portfolio: {
