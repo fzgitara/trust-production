@@ -10,9 +10,9 @@ interface Props {
   dictionary: Dictionary;
 }
 
-/** Contact section — primary WhatsApp deep link + direct info + form. */
+/** Contact section — primary WhatsApp deep link + direct info + quotation form. */
 export default function Contact({ locale, dictionary }: Props) {
-  const hasContact = !!(site.email || site.phone || site.serviceArea);
+  const quoteHref = waLink(dictionary.cta.quoteMessage);
 
   return (
     <Section id="contact">
@@ -26,7 +26,9 @@ export default function Contact({ locale, dictionary }: Props) {
           <p className="mt-4 text-mist-200">{dictionary.contact.intro}</p>
 
           <a
-            href={waLink(dictionary.contact.whatsappLabel)}
+            href={quoteHref}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-8 inline-flex items-center gap-3 rounded-2xl bg-signal-500 px-6 py-4 text-base font-semibold text-ink-950 transition-colors hover:bg-signal-400"
           >
             <WhatsAppIcon />
@@ -39,54 +41,51 @@ export default function Contact({ locale, dictionary }: Props) {
               {dictionary.contact.directTitle}
             </h3>
 
-            {hasContact ? (
-              <ul className="mt-4 flex flex-col gap-3 text-mist-200">
-                {site.email && (
-                  <li>
-                    <span className="text-mist-400">
-                      {dictionary.contact.emailLabel}:
-                    </span>{" "}
-                    {site.email}
-                  </li>
-                )}
-                {site.phone && (
-                  <li>
-                    <span className="text-mist-400">
-                      {dictionary.contact.phoneLabel}:
-                    </span>{" "}
-                    {site.phone}
-                  </li>
-                )}
-                {site.serviceArea && (
-                  <li>
-                    <span className="text-mist-400">
-                      {dictionary.contact.areaLabel}:
-                    </span>{" "}
-                    {site.serviceArea}
-                  </li>
-                )}
-              </ul>
-            ) : (
-              <p className="mt-4 text-sm text-mist-300">
-                {dictionary.contact.todoNote}
-              </p>
-            )}
-
-            <dl className="mt-4 text-mist-200">
-              <dt className="text-mist-400">
-                {dictionary.contact.responseTimeLabel}:
-              </dt>
-              <dd>{dictionary.contact.responseTimeValue}</dd>
-            </dl>
+            <ul className="mt-4 flex flex-col gap-3 text-mist-200">
+              <li>
+                <span className="text-mist-400">
+                  {dictionary.contact.whatsappNumberLabel}:
+                </span>{" "}
+                <a
+                  href={quoteHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-signal-400 transition-colors hover:text-signal-300"
+                >
+                  {site.whatsappDisplay}
+                </a>
+              </li>
+              {site.email && (
+                <li>
+                  <span className="text-mist-400">
+                    {dictionary.contact.emailLabel}:
+                  </span>{" "}
+                  {site.email}
+                </li>
+              )}
+              {site.phone && (
+                <li>
+                  <span className="text-mist-400">
+                    {dictionary.contact.phoneLabel}:
+                  </span>{" "}
+                  {site.phone}
+                </li>
+              )}
+              {site.serviceArea && (
+                <li>
+                  <span className="text-mist-400">
+                    {dictionary.contact.areaLabel}:
+                  </span>{" "}
+                  {site.serviceArea}
+                </li>
+              )}
+            </ul>
           </div>
         </div>
 
-        {/* Contact form → WhatsApp */}
+        {/* Quotation request form → WhatsApp */}
         <div>
-          <ContactForm
-            locale={locale}
-            dictionary={dictionary}
-          />
+          <ContactForm locale={locale} dictionary={dictionary} />
         </div>
       </div>
     </Section>

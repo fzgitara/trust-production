@@ -26,9 +26,7 @@ export default function Header({ locale, dictionary }: Props) {
     { href: `/${locale}#contact`, label: dictionary.nav.contact },
   ];
 
-  const quoteHref = waLink(
-    dictionary.cta.getQuoteOnWhatsApp
-  );
+  const quoteHref = waLink(dictionary.cta.quoteMessage);
 
   return (
     <header className="sticky top-0 z-50 border-b hairline bg-ink-950/85 backdrop-blur-md">
@@ -69,6 +67,8 @@ export default function Header({ locale, dictionary }: Props) {
           />
           <a
             href={quoteHref}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-signal-500 px-5 py-2.5 text-sm font-semibold text-ink-950 transition-colors hover:bg-signal-400"
           >
             {dictionary.cta.getQuote}
@@ -130,6 +130,8 @@ export default function Header({ locale, dictionary }: Props) {
               />
               <a
                 href={quoteHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-signal-500 px-5 py-2.5 text-sm font-semibold text-ink-950"
               >
                 {dictionary.cta.getQuote}

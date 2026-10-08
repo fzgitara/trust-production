@@ -22,7 +22,11 @@ export default function CtaBand({ locale, dictionary }: Props) {
           {dictionary.ctaBand.text}
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Button href={waLink(dictionary.ctaBand.primaryLabel)}>
+          <Button
+            href={waLink(dictionary.cta.quoteMessage)}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {dictionary.ctaBand.primaryLabel}
           </Button>
           <Button href="#contact" variant="secondary">

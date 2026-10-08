@@ -16,7 +16,11 @@ const id: Dictionary = {
   cta: {
     getQuote: "Dapatkan Penawaran",
     getQuoteOnWhatsApp: "Dapatkan Penawaran via WhatsApp",
+    quoteMessage:
+      "Halo Trust Production, saya ingin meminta penawaran untuk acara saya.",
     enquire: "Tanya",
+    enquireMessage:
+      "Halo Trust Production, saya ingin bertanya tentang layanan berikut:",
     seeRecentEvents: "Lihat Acara Terbaru",
     viewGallery: "Lihat Galeri",
     backToTop: "Kembali ke atas",
@@ -125,17 +129,18 @@ const id: Dictionary = {
     eyebrow: "Kontak",
     heading: "Mari bicarakan acara Anda",
     intro:
-      "Kirim detail acara Anda via WhatsApp dan tim kami akan merespons. Informasi kontak lengkap disusun di bawah ini.",
-    whatsappLabel: "Mulai via WhatsApp",
+      "Kirim detail acara Anda via WhatsApp dan tim kami akan merespons dengan penawaran.",
+    whatsappLabel: "Chat WhatsApp",
     directTitle: "Informasi langsung",
+    whatsappNumberLabel: "WhatsApp",
     emailLabel: "Email",
     phoneLabel: "Telepon",
     areaLabel: "Area layanan",
-    responseTimeLabel: "Waktu respons",
-    responseTimeValue: "TODO: konfirmasi — respon SLA (mis. dalam X jam)", // TODO: confirm
-    todoNote: "TODO: tambahkan detail kontak & area layanan di sini.", // TODO: confirm
   },
   form: {
+    title: "Formulir Permintaan Penawaran",
+    intro:
+      "Isi detail acara Anda, lalu kirim langsung ke WhatsApp kami — pesan akan terisi otomatis.",
     nameLabel: "Nama",
     namePlaceholder: "Nama Anda",
     eventTypeLabel: "Jenis acara",
@@ -143,9 +148,20 @@ const id: Dictionary = {
     dateLabel: "Tanggal acara",
     venueLabel: "Lokasi / Venue",
     venuePlaceholder: "Nama venue dan kota",
+    serviceLabel: "Layanan yang dibutuhkan",
     messageLabel: "Pesan",
     messagePlaceholder: "Ceritakan tentang acara Anda…",
-    submitLabel: "Kirim via WhatsApp",
+    submitLabel: "Kirim Permintaan Penawaran",
+    reopenLabel: "WhatsApp tidak terbuka? Klik di sini",
+    waMessage: {
+      intro: "Halo Trust Production, saya ingin meminta penawaran untuk acara berikut:",
+      name: "Nama",
+      eventType: "Jenis acara",
+      date: "Tanggal acara",
+      venue: "Lokasi / Venue",
+      services: "Layanan yang dibutuhkan",
+      message: "Pesan",
+    },
   },
   footer: {
     tagline: "Organizer acara, sound system, panggung, dan produksi pendukung. TODO: tagline resmi.", // TODO: confirm tagline

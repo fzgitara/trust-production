@@ -16,7 +16,11 @@ const en: Dictionary = {
   cta: {
     getQuote: "Get a Quote",
     getQuoteOnWhatsApp: "Get a Quote on WhatsApp",
+    quoteMessage:
+      "Hello Trust Production, I'd like to request a quotation for my event.",
     enquire: "Enquire",
+    enquireMessage:
+      "Hello Trust Production, I'd like to ask about the following service:",
     seeRecentEvents: "See Recent Events",
     viewGallery: "View Gallery",
     backToTop: "Back to top",
@@ -125,17 +129,18 @@ const en: Dictionary = {
     eyebrow: "Contact",
     heading: "Let’s talk about your event",
     intro:
-      "Send your event details via WhatsApp and our team will get back to you. Full contact info is below.",
-    whatsappLabel: "Start on WhatsApp",
+      "Send your event details via WhatsApp and our team will get back to you with a quotation.",
+    whatsappLabel: "Chat on WhatsApp",
     directTitle: "Direct information",
+    whatsappNumberLabel: "WhatsApp",
     emailLabel: "Email",
     phoneLabel: "Phone",
     areaLabel: "Service area",
-    responseTimeLabel: "Response time",
-    responseTimeValue: "TODO: confirm — response SLA (e.g. within X hours)", // TODO: confirm
-    todoNote: "TODO: add contact details & service area here.", // TODO: confirm
   },
   form: {
+    title: "Quotation Request Form",
+    intro:
+      "Fill in your event details and send them straight to our WhatsApp — the message is filled in for you.",
     nameLabel: "Name",
     namePlaceholder: "Your name",
     eventTypeLabel: "Event type",
@@ -143,9 +148,21 @@ const en: Dictionary = {
     dateLabel: "Event date",
     venueLabel: "Venue / Location",
     venuePlaceholder: "Venue name and city",
+    serviceLabel: "Services needed",
     messageLabel: "Message",
     messagePlaceholder: "Tell us about your event…",
-    submitLabel: "Send via WhatsApp",
+    submitLabel: "Send Quotation Request",
+    reopenLabel: "WhatsApp didn’t open? Click here",
+    waMessage: {
+      intro:
+        "Hello Trust Production, I'd like to request a quotation for the following event:",
+      name: "Name",
+      eventType: "Event type",
+      date: "Event date",
+      venue: "Venue / Location",
+      services: "Services needed",
+      message: "Message",
+    },
   },
   footer: {
     tagline: "Event organizer, sound system, stage, and supporting production. TODO: official tagline.", // TODO: confirm tagline

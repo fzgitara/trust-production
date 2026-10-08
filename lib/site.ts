@@ -6,7 +6,10 @@ export const site = {
   imageKitEndpoint:
     process.env.NEXT_PUBLIC_IMAGEKIT_ENDPOINT ?? "egaup9wo85",
   /** WhatsApp — country code + number, digits only (no +, spaces or dashes). */
-  whatsappNumber: "", // TODO: confirm WhatsApp number with country code
+  whatsappNumber: "62881037159811",
+
+  /** WhatsApp number as displayed to visitors. */
+  whatsappDisplay: "+62 881-0371-59811",
 
   /** Domain for canonical URLs / Open Graph. */
   baseUrl: "https://trustproduction.example.com", // TODO: confirm production domain
@@ -40,10 +43,8 @@ export const site = {
 
 /**
  * Build a WhatsApp deep link using the localized pre-filled message text.
- * Returns "#" placeholder if number not yet configured.
  */
 export function waLink(message: string): string {
-  if (!site.whatsappNumber) return "#"; // TODO: number not configured yet
   return `https://wa.me/${site.whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
 

@@ -1,4 +1,5 @@
 import { homepageImages } from "@/content/images";
+import { waLink } from "@/lib/site";
 import IKImage from "./shared/IKImage";
 import type { Dictionary } from "@/lib/i18n/types";
 import type { Locale } from "@/lib/i18n/config";
@@ -15,6 +16,7 @@ interface Props {
  * Future route: /[locale]/services/[category].
  */
 export default function Services({ locale, dictionary }: Props) {
+  void locale;
   const serviceImages = homepageImages.services;
 
   return (
@@ -60,9 +62,11 @@ export default function Services({ locale, dictionary }: Props) {
                 </h3>
                 <p className="mt-3 text-mist-200">{service.description}</p>
 
-                {/* Future: link to detail page /[locale]/services/[id] */}
+                {/* Enquiry goes straight to WhatsApp — no service detail pages in the MVP. */}
                 <a
-                  href={`/${locale}/services/${service.id}`}
+                  href={waLink(`${dictionary.cta.enquireMessage} ${service.title}`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-signal-400 hover:text-signal-300"
                 >
                   {dictionary.cta.enquire}

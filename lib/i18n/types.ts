@@ -18,7 +18,11 @@ export interface Dictionary {
   cta: {
     getQuote: string;
     getQuoteOnWhatsApp: string;
+    /** Pre-filled WhatsApp text used by the generic quotation CTAs. */
+    quoteMessage: string;
     enquire: string;
+    /** Lead-in for the per-service WhatsApp enquiry message. */
+    enquireMessage: string;
     seeRecentEvents: string;
     viewGallery: string;
     backToTop: string;
@@ -70,14 +74,14 @@ export interface Dictionary {
     intro: string;
     whatsappLabel: string;
     directTitle: string;
+    whatsappNumberLabel: string;
     emailLabel: string;
     phoneLabel: string;
     areaLabel: string;
-    responseTimeLabel: string;
-    responseTimeValue: string;
-    todoNote: string;
   };
   form: {
+    title: string;
+    intro: string;
     nameLabel: string;
     namePlaceholder: string;
     eventTypeLabel: string;
@@ -85,9 +89,22 @@ export interface Dictionary {
     dateLabel: string;
     venueLabel: string;
     venuePlaceholder: string;
+    serviceLabel: string;
     messageLabel: string;
     messagePlaceholder: string;
     submitLabel: string;
+    /** Fallback link shown after the WhatsApp deep link has been opened. */
+    reopenLabel: string;
+    /** Localized field labels used to compose the pre-filled WhatsApp text. */
+    waMessage: {
+      intro: string;
+      name: string;
+      eventType: string;
+      date: string;
+      venue: string;
+      services: string;
+      message: string;
+    };
   };
   footer: {
     tagline: string;
@@ -110,7 +127,7 @@ export interface TrustItem {
 }
 
 export interface ServiceItem {
-  id: string; // stable slug for future /services/[category] routes
+  id: string; // stable slug, also used to compose the WhatsApp quotation request
   title: string;
   description: string;
   imageAlt: string;

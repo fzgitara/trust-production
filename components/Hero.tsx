@@ -42,7 +42,11 @@ export default function Hero({ locale, dictionary }: Props) {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Button href={waLink(dictionary.cta.getQuoteOnWhatsApp)}>
+            <Button
+              href={waLink(dictionary.cta.quoteMessage)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {dictionary.cta.getQuoteOnWhatsApp}
             </Button>
             <Button href={`/${locale}#events`} variant="secondary">

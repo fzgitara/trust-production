@@ -81,10 +81,12 @@ export default function Footer({ locale, dictionary }: Props) {
               {site.serviceArea && <li>{site.serviceArea}</li>}
               <li>
                 <a
-                  href={waLink(dictionary.cta.getQuoteOnWhatsApp)}
+                  href={waLink(dictionary.cta.quoteMessage)}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-signal-400 hover:text-signal-300"
                 >
-                  WhatsApp
+                  {dictionary.contact.whatsappNumberLabel}: {site.whatsappDisplay}
                 </a>
               </li>
             </ul>
@@ -97,7 +99,7 @@ export default function Footer({ locale, dictionary }: Props) {
             &copy; {year} {site.name}.{" "}
             {dictionary.footer.rightsReserved}
           </p>
-          <a href="#top" className="text-mist-300 hover:text-signal-400">
+          <a href="#main" className="text-mist-300 hover:text-signal-400">
             ↑ {dictionary.cta.backToTop}
           </a>
         </div>
