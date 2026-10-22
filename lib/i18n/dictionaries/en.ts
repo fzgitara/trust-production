@@ -172,6 +172,12 @@ const en: Dictionary = {
     rightsReserved: "All rights reserved.",
     localeSwitcherLabel: "Language",
   },
+  eventDetail: {
+    back: "Back to portfolio",
+    provides: "What we provided",
+    gallery: "Gallery",
+    close: "Close",
+  },
   misc: {
     eventTypeTags: {
       wedding: "Wedding",

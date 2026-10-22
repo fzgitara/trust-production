@@ -164,12 +164,18 @@ const id: Dictionary = {
     },
   },
   footer: {
-    tagline: "Organizer acara, sound system, panggung, dan produksi pendukung. TODO: tagline resmi.", // TODO: confirm tagline
+    tagline: "Organizer acara, sound system, panggung, dan produksi pendukung.", // TODO: confirm tagline
     navTitle: "Navigasi",
     contactTitle: "Kontak",
     legalTitle: "Legal",
     rightsReserved: "Hak cipta dilindungi.",
     localeSwitcherLabel: "Bahasa",
+  },
+  eventDetail: {
+    back: "Kembali ke portofolio",
+    provides: "Yang kami sediakan",
+    gallery: "Galeri",
+    close: "Tutup",
   },
   misc: {
     eventTypeTags: {

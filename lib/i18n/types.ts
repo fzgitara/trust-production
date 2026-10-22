@@ -114,6 +114,12 @@ export interface Dictionary {
     rightsReserved: string;
     localeSwitcherLabel: string;
   };
+  eventDetail: {
+    back: string;
+    provides: string;
+    gallery: string;
+    close: string;
+  };
   misc: {
     eventTypeTags: Record<string, string>; // localized labels for event type filters
   };

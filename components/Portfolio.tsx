@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Dictionary } from "@/lib/i18n/types";
 import type { Locale } from "@/lib/i18n/config";
 import { featuredEvents } from "@/content/events";
@@ -18,7 +19,7 @@ interface Props {
  * cover must be real & verified before launch — unconfirmed rows stay visible
  * as TODO placeholders so the layout can be reviewed.
  *
- * Future route: /[locale]/events, /[locale]/events/[slug].
+ * Each card links to /[locale]/events/[slug].
  */
 export default function Portfolio({ locale, dictionary }: Props) {
   const events = featuredEvents;
@@ -50,9 +51,10 @@ export default function Portfolio({ locale, dictionary }: Props) {
         /* Populated event grid — driven by content/events.ts. */
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {events.map((event) => (
-            <article
+            <Link
               key={event.slug}
-              className="group overflow-hidden rounded-2xl bg-ink-800"
+              href={`/${locale}/events/${event.slug}`}
+              className="group block overflow-hidden rounded-2xl bg-ink-800"
             >
               <div className="relative aspect-[4/3]">
                 <IKImage
@@ -81,7 +83,7 @@ export default function Portfolio({ locale, dictionary }: Props) {
                   {formatDate(event.date)}
                 </time>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       ) : (

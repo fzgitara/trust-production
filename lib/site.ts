@@ -15,7 +15,7 @@ export const site = {
   baseUrl: "https://trustproduction.example.com", // TODO: confirm production domain
 
   /** Email address. */
-  email: "", // TODO: confirm contact email
+  email: "admin@trustproduction.id",
 
   /** Phone Number. */
   phone: "", // TODO: confirm phone number

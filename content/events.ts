@@ -36,12 +36,39 @@ export interface EventData {
   date: string;
   /** Real ImageKit path for the cover under events/<slug>/cover. */
   cover: string;
+  /** Number of `image-NN.jpg` photos in the ImageKit folder (cover not counted). */
+  imageCount: number;
+  /** What we provided at the event (from the Drive description file). Omit if unknown. */
+  provides?: string[];
+}
+
+/** ImageKit paths of the extra photos: image-01.jpg ... image-NN.jpg. */
+export function eventPhotos(event: EventData): string[] {
+  return Array.from(
+    { length: event.imageCount },
+    (_, i) => `events/${event.slug}/image-${String(i + 1).padStart(2, "0")}.jpg`
+  );
 }
 
 /**
  * Featured events, most recent first.
  */
 export const events: EventData[] = [
+  {
+    slug: "pit_fest_9",
+    type: "concert",
+    name: "PIT-FEST #9",
+    venue: "Pit Stop KIG",
+    city: "Gresik",
+    date: "2026-08-22",
+    cover: "events/pit_fest_9/cover",
+    imageCount: 5,
+    provides: [
+      "Stage Flooring 8x6",
+      "Rigging 4x8",
+      "Lighting",
+    ],
+  },
   {
     slug: "pomprov_jatim",
     type: "concert",
@@ -50,6 +77,7 @@ export const events: EventData[] = [
     city: "Surabaya",
     date: "2025-05-28",
     cover: "events/pomprov_jatim/cover",
+    imageCount: 5,
   },
   {
     slug: "eculf_3_0",
@@ -59,6 +87,7 @@ export const events: EventData[] = [
     city: "Surabaya",
     date: "2024-12-28",
     cover: "events/eculf_3_0/cover",
+    imageCount: 2,
   },
   {
     slug: "pekan_raya_mahasiswa",
@@ -68,6 +97,7 @@ export const events: EventData[] = [
     city: "Surabaya",
     date: "2024-08-30",
     cover: "events/pekan_raya_mahasiswa/cover",
+    imageCount: 2,
   },
   {
     slug: "moro_moro_goyang",
@@ -77,6 +107,7 @@ export const events: EventData[] = [
     city: "Gresik",
     date: "2024-06-28",
     cover: "events/moro_moro_goyang/cover",
+    imageCount: 3,
   },
   {
     slug: "shorprinks",
@@ -86,6 +117,16 @@ export const events: EventData[] = [
     city: "Gresik",
     date: "2026-06-20",
     cover: "events/shorprinks/cover",
+    imageCount: 2,
+    provides: [
+      "Rigging 8x6 & tower sound",
+      "Sound 10.000w",
+      "Moving Beam XMLITE LLP400 - 4 unit",
+      "Strobo ATOMIC 1000w - 6 unit",
+      "Parled 54x3w RGB - 6 unit",
+      "Fresnell UNILUMIN 200w - 4 unit",
+      "Smoke 1200w - 1 unit",
+    ],
   },
   {
     slug: "aeternforseven",
@@ -95,6 +136,14 @@ export const events: EventData[] = [
     city: "Bangkalan",
     date: "2026-05-10",
     cover: "events/aeternforseven/cover",
+    imageCount: 2,
+    provides: [
+      "Rigging 10x16",
+      "Moving Beam XMLITE LLP400 - 4 unit",
+      "Strobo ATOMIC 1000w - 4 unit",
+      "Parled 10x18w RGB - 6 unit",
+      "Fresnell UNILUMIN 200w - 4 unit",
+    ],
   },
   {
     slug: "rayantara_59",
@@ -104,6 +153,14 @@ export const events: EventData[] = [
     city: "Gresik",
     date: "2026-04-03",
     cover: "events/rayantara_59/cover",
+    imageCount: 2,
+    provides: [
+      "Rigging 8x12m",
+      "Moving Beam XMLITE LLP400 - 4 unit",
+      "Strobo ATOMIC 1000w - 4 unit",
+      "Parled 10x18w RGB - 6 unit",
+      "Fresnell UNILUMIN 200w - 4 unit",
+    ],
   },
   {
     slug: "celestia_2k25",
@@ -113,6 +170,7 @@ export const events: EventData[] = [
     city: "Gresik",
     date: "2025-09-19",
     cover: "events/celestia_2k25/cover",
+    imageCount: 2,
   },
   // ── BELUM ADA KETERANGAN (folder Drive tanpa file md/txt) — lengkapi sebelum publish ──
   // {
@@ -162,5 +220,11 @@ export const events: EventData[] = [
   // },
 ];
 
-/** Convenience accessor for the portfolio section. */
-export const featuredEvents = events;
+/** Convenience accessor for the portfolio section, newest date first. */
+export const featuredEvents = [...events].sort((a, b) =>
+  b.date.localeCompare(a.date)
+);
+
+export function getEvent(slug: string): EventData | undefined {
+  return events.find((e) => e.slug === slug);
+}
