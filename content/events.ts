@@ -122,7 +122,7 @@ export const events: EventData[] = [
     city: "Surabaya",
     date: "2024-12-28",
     cover: "events/eculf_3_0/cover",
-    imageCount: 2,
+    imageCount: 4,
   },
   {
     slug: "pekan_raya_mahasiswa",
@@ -132,7 +132,7 @@ export const events: EventData[] = [
     city: "Surabaya",
     date: "2024-08-30",
     cover: "events/pekan_raya_mahasiswa/cover",
-    imageCount: 2,
+    imageCount: 5,
   },
   {
     slug: "moro_moro_goyang",
@@ -142,7 +142,7 @@ export const events: EventData[] = [
     city: "Gresik",
     date: "2024-06-28",
     cover: "events/moro_moro_goyang/cover",
-    imageCount: 3,
+    imageCount: 4,
   },
   {
     slug: "shorprinks",
@@ -171,7 +171,7 @@ export const events: EventData[] = [
     city: "Bangkalan",
     date: "2026-05-10",
     cover: "events/aeternforseven/cover",
-    imageCount: 2,
+    imageCount: 4,
     provides: [
       "Rigging 10x16",
       "Moving Beam XMLITE LLP400 - 4 unit",
@@ -188,7 +188,7 @@ export const events: EventData[] = [
     city: "Gresik",
     date: "2026-04-03",
     cover: "events/rayantara_59/cover",
-    imageCount: 2,
+    imageCount: 3,
     provides: [
       "Rigging 8x12m",
       "Moving Beam XMLITE LLP400 - 4 unit",
