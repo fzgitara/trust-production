@@ -134,6 +134,7 @@ const en: Dictionary = {
     directTitle: "Direct information",
     whatsappNumberLabel: "WhatsApp",
     emailLabel: "Email",
+    instagramLabel: "Instagram",
     phoneLabel: "Phone",
     areaLabel: "Service area",
   },

@@ -1,6 +1,6 @@
 import type { Dictionary } from "@/lib/i18n/types";
 import type { Locale } from "@/lib/i18n/config";
-import { site, waLink } from "@/lib/site";
+import { instagramHandle, site, waLink } from "@/lib/site";
 import Section from "./shared/Section";
 import Eyebrow from "./shared/Eyebrow";
 import ContactForm from "./ContactForm";
@@ -60,7 +60,29 @@ export default function Contact({ locale, dictionary }: Props) {
                   <span className="text-mist-400">
                     {dictionary.contact.emailLabel}:
                   </span>{" "}
-                  {site.email}
+                  <a
+                    href={`mailto:${site.email}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-signal-400 transition-colors hover:text-signal-300"
+                  >
+                    {site.email}
+                  </a>
+                </li>
+              )}
+              {site.social.instagram && (
+                <li>
+                  <span className="text-mist-400">
+                    {dictionary.contact.instagramLabel}:
+                  </span>{" "}
+                  <a
+                    href={site.social.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-signal-400 transition-colors hover:text-signal-300"
+                  >
+                    {instagramHandle}
+                  </a>
                 </li>
               )}
               {site.phone && (

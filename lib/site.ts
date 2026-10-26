@@ -35,11 +35,16 @@ export const site = {
 
   /** Social profiles (only if real profiles exist). */
   social: {
-    instagram: "", // TODO: confirm profile
+    instagram: "https://www.instagram.com/trustproduction.id",
     facebook: "", // TODO: confirm profile
     youtube: "", // TODO: confirm profile
   },
 };
+
+/** Instagram handle for display, e.g. "@trustproduction.id" (empty if no profile). */
+export const instagramHandle = site.social.instagram
+  ? `@${site.social.instagram.replace(/\/$/, "").split("/").pop()}`
+  : "";
 
 /**
  * Build a WhatsApp deep link using the localized pre-filled message text.

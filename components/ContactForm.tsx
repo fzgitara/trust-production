@@ -94,7 +94,7 @@ export default function ContactForm({ locale, dictionary }: Props) {
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
-        <div>
+        <div className="min-w-0">
           <label className="mb-1 block text-sm text-mist-200" htmlFor="cf-type">
             {f.eventTypeLabel}
           </label>
@@ -106,14 +106,14 @@ export default function ContactForm({ locale, dictionary }: Props) {
             placeholder={f.eventTypePlaceholder}
           />
         </div>
-        <div>
+        <div className="min-w-0">
           <label className="mb-1 block text-sm text-mist-200" htmlFor="cf-date">
             {f.dateLabel}
           </label>
           <input
             id="cf-date"
             type="date"
-            className={inputClass}
+            className={`${inputClass} min-h-[2.625rem] min-w-0 appearance-none text-left`}
             value={date}
             onChange={(e) => setDate(e.target.value)}
           />

@@ -134,6 +134,7 @@ const id: Dictionary = {
     directTitle: "Informasi langsung",
     whatsappNumberLabel: "WhatsApp",
     emailLabel: "Email",
+    instagramLabel: "Instagram",
     phoneLabel: "Telepon",
     areaLabel: "Area layanan",
   },

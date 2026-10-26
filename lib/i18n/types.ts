@@ -76,6 +76,7 @@ export interface Dictionary {
     directTitle: string;
     whatsappNumberLabel: string;
     emailLabel: string;
+    instagramLabel: string;
     phoneLabel: string;
     areaLabel: string;
   };

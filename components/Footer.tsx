@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Dictionary } from "@/lib/i18n/types";
 import type { Locale } from "@/lib/i18n/config";
-import { site, waLink } from "@/lib/site";
+import { instagramHandle, site, waLink } from "@/lib/site";
 import LocaleSwitcher from "./LocaleSwitcher";
 import IKImage from "./shared/IKImage";
 
@@ -76,7 +76,30 @@ export default function Footer({ locale, dictionary }: Props) {
               {dictionary.footer.contactTitle}
             </h3>
             <ul className="mt-4 flex flex-col gap-2 text-sm text-mist-200">
-              {site.email && <li>{site.email}</li>}
+              {site.email && (
+                <li>
+                  <a
+                    href={`mailto:${site.email}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-colors hover:text-signal-400"
+                  >
+                    {site.email}
+                  </a>
+                </li>
+              )}
+              {site.social.instagram && (
+                <li>
+                  <a
+                    href={site.social.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-colors hover:text-signal-400"
+                  >
+                    {dictionary.contact.instagramLabel}: {instagramHandle}
+                  </a>
+                </li>
+              )}
               {site.phone && <li>{site.phone}</li>}
               {site.serviceArea && <li>{site.serviceArea}</li>}
               <li>
