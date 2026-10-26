@@ -3,8 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { isLocale, locales } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
-import { waLink } from "@/lib/site";
-import { imagekitUrl } from "@/lib/imagekit";
+import { site, waLink } from "@/lib/site";
+import { localeAlternates, ogImage } from "@/lib/seo";
 import { events, eventPhotos, getEvent } from "@/content/events";
 
 import Header from "@/components/Header";
@@ -13,6 +13,7 @@ import Section from "@/components/shared/Section";
 import Eyebrow from "@/components/shared/Eyebrow";
 import Button from "@/components/shared/Button";
 import IKImage from "@/components/shared/IKImage";
+import JsonLd from "@/components/shared/JsonLd";
 import EventGallery from "@/components/EventGallery";
 
 interface Props {
@@ -32,13 +33,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = event.name; // the layout title template appends the site name
   const description = `${event.venue}, ${event.city}`;
+  const alternates = localeAlternates(locale, `/events/${event.slug}`);
   return {
     title,
     description,
+    alternates,
     openGraph: {
       title,
       description,
-      images: [imagekitUrl(event.cover, ["w-1200"])],
+      url: alternates.canonical,
+      images: [ogImage(event.cover)],
       locale: locale === "id" ? "id_ID" : "en_US",
       type: "website",
     },
@@ -59,8 +63,30 @@ export default async function EventDetailPage({ params }: Props) {
   }).format(new Date(`${event.date}T00:00:00`));
   const photos = eventPhotos(event);
 
+  // We were the production vendor, not the organizer, so no `organizer` is claimed.
+  const eventJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: event.name,
+    startDate: event.date,
+    eventStatus: "https://schema.org/EventScheduled",
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    location: {
+      "@type": "Place",
+      name: event.venue,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: event.city,
+        addressCountry: "ID",
+      },
+    },
+    image: ogImage(event.cover).url,
+    url: `${site.baseUrl}/${locale}/events/${event.slug}`,
+  };
+
   return (
     <>
+      <JsonLd data={eventJsonLd} />
       <Header locale={locale} dictionary={dict} />
       <main id="main">
         <Section className="pt-32 sm:pt-36">

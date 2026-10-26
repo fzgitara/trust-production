@@ -6,6 +6,10 @@
  * the allowlisted remote host below is kept for any non-loader direct usage.
  */
 const nextConfig = {
+  // `/` has no page of its own: send it to the default locale (lib/i18n/config.ts).
+  async redirects() {
+    return [{ source: "/", destination: "/id", permanent: false }];
+  },
   images: {
     remotePatterns: [
       {

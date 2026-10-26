@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { isLocale, locales } from "@/lib/i18n/config";
+import { isLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { site } from "@/lib/site";
+import { localeAlternates, ogImage } from "@/lib/seo";
+import { homepageImages } from "@/content/images";
+import JsonLd from "@/components/shared/JsonLd";
 
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
@@ -25,27 +28,17 @@ export async function generateMetadata({
   if (!isLocale(locale)) return {};
 
   const dict = await getDictionary(locale);
-  const canonical = new URL(`/${locale}`, site.baseUrl);
-
-  const alternates = Object.fromEntries(
-    locales
-      .filter((l) => l !== locale)
-      .map((l) => [l, new URL(`/${l}`, site.baseUrl).toString()])
-  );
+  const alternates = localeAlternates(locale);
 
   return {
     title: dict.hero.headline,
     description: dict.hero.subheadline,
-    alternates: {
-      canonical: canonical.toString(),
-      languages: alternates as Record<string, string>,
-    },
+    alternates,
     openGraph: {
       title: dict.hero.headline,
       description: dict.hero.subheadline,
-      url: canonical.toString(),
-      // TODO: confirm a real OG image (ImageKit ~1200x630)
-      images: [],
+      url: alternates.canonical,
+      images: [ogImage(homepageImages.hero.publicId)],
       locale: locale === "id" ? "id_ID" : "en_US",
       type: "website",
     },
@@ -60,8 +53,23 @@ export default async function HomePage({ params }: HomeProps) {
 
   const dict = await getDictionary(locale);
 
+  // Only confirmed facts; address/hours are omitted until the business confirms them.
+  const businessJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: site.name,
+    url: `${site.baseUrl}/${locale}`,
+    description: dict.hero.subheadline,
+    image: ogImage(homepageImages.hero.publicId).url,
+    email: site.email,
+    telephone: `+${site.whatsappNumber}`,
+    sameAs: site.social.instagram ? [site.social.instagram] : [],
+    inLanguage: locale,
+  };
+
   return (
     <>
+      <JsonLd data={businessJsonLd} />
       <Header locale={locale} dictionary={dict} />
       <main id="main">
         <Hero locale={locale} dictionary={dict} />

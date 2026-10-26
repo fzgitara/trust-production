@@ -12,7 +12,7 @@ export const site = {
   whatsappDisplay: "+62 881-0371-59811",
 
   /** Domain for canonical URLs / Open Graph. */
-  baseUrl: "https://trustproduction.example.com", // TODO: confirm production domain
+  baseUrl: "https://www.trustproduction.id",
 
   /** Email address. */
   email: "admin@trustproduction.id",
