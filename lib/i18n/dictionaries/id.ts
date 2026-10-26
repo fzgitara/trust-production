@@ -32,13 +32,13 @@ const id: Dictionary = {
   },
   hero: {
     eyebrow: "Event Production & Rental",
-    headline: "Kami Siap Menjadikan Produksi Acara Anda Menjadi Luar Biasa!",
+    headline: "Kami Siap Menjadikan Produksi Acara Anda Luar Biasa!",
     subheadline:
       "Organisasi acara end-to-end, sound system, panggung, dan lighting untuk pernikahan, korporat, konser, sekolah, komunitas, dan acara privat.",
     imageAlt: "Panggung produksi dengan rig lighting — teknologi & set-up nyata",
     trustItems: [
       { value: "50+", label: "acara yang telah dikerjakan", confirmed: true },
-      { value: "2019", label: "tahun berpengalaman", confirmed: true },
+      { value: "2019", label: "tahun berdiri", confirmed: true },
       { value: "Lengkap", label: "paket peralatan tersedia", confirmed: true },
     ],
   },

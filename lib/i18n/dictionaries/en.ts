@@ -38,7 +38,7 @@ const en: Dictionary = {
     imageAlt: "Production stage with lighting rig — real equipment & setup",
     trustItems: [
       { value: "50+", label: "events delivered", confirmed: true },
-      { value: "2019", label: "years in business", confirmed: true },
+      { value: "2019", label: "year founded", confirmed: true },
       { value: "Full", label: "equipment kit available", confirmed: true },
     ],
   },

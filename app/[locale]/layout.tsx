@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata, Viewport } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "../globals.css";
 import { locales, isLocale } from "@/lib/i18n/config";
 import { site } from "@/lib/site";
@@ -47,6 +48,7 @@ export default async function LocaleLayout({
     <html lang={locale} className={`${inter.variable} ${jakarta.variable}`}>
       <body className="min-h-screen bg-ink-950 text-mist-100 font-body">
         {children}
+        <Analytics />
       </body>
     </html>
   );
